@@ -48,7 +48,10 @@ class Airplane {
       this.stomach = []
     }
     eat(someFood) {
-     return push(this.stomach) 
+      for(let someFood = 0; someFood <= 10; someFood++){
+        this.stomach.push(someFood)
+      }
+      return this.stomach
     }
     poop(){
       return this.stomach = []
@@ -73,6 +76,11 @@ class Airplane {
   */
   
  class Car {
+  //  constructor(model, milesPerGallon){
+  //    this.tank = 0;
+  //    this.odometer = 0
+  //    .fill(gallons)= 
+  //  }
     
   }
   
