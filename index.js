@@ -48,13 +48,13 @@ class Airplane {
       this.stomach = []
     }
     eat(someFood) {
-      for(let someFood = 0; someFood <= 10; someFood++){
-        this.stomach.push(someFood)
+      if (this.stomach.length < 10) {
+        this.stomach.push(someFood);
       }
-      return this.stomach
+  
     }
     poop(){
-      return this.stomach = []
+      this.stomach = []
     }
     toString(){
       return `${this.name} , ${this.age}`
@@ -76,19 +76,40 @@ class Airplane {
   */
   
  class Car {
-  //  constructor(model, milesPerGallon){
-  //    this.tank = 0;
-  //    this.odometer = 0
-  //    .fill(gallons)= 
-  //  }
-    
+   constructor(model, milesPerGallon){
+     this.model = model
+     this.milesPerGallon = milesPerGallon
+     this.tank = 0;
+     this.odometer = 0
+     }
+     fill(gallons){
+      return this.tank +=  gallons
+    }
+     drive(distance){
+       // there IS enough gas
+		if (this.tank * this.milesPerGallon > distance) {
+			this.odometer += distance;
+			this.tank = this.tank - distance / this.milesPerGallon;
+
+			// console.log(`MPG: ${this.milesPerGallon}, Made it fine - Tank: ${this.tank}. I've got ${this.milesPerGallon} MPG`);
+			// console.log(`Made it fine - Tank: ${this.tank}`);
+		}
+		// theres NOT enough gas
+		else {
+			this.odometer = this.odometer + this.tank * this.milesPerGallon;
+			this.tank = 0;
+
+			// console.log(`I ran out of fuel at ${this.odometer} miles! Tank: ${this.tank}`);
+			return `I ran out of fuel at ${this.odometer} miles!`;
+		}
   }
+}
   
   /*
     TASK 3
       - Write a Lambdasian class.
       - Its constructor takes a single argument - an object with the following keys:
-          + name
+          + name 
           + age
           + location
       - Its constructor should initialize `name`, `age` and `location` properties on the instance.
@@ -96,7 +117,7 @@ class Airplane {
           + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
           + {name} and {location} of course come from the instance's own properties.
   */
- class Lambdasian {
+  class Lambdasian {
     
   }
   
