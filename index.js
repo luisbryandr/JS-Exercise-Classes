@@ -48,9 +48,14 @@ class Airplane {
       this.stomach = []
     }
     eat(someFood) {
-     return push(this.stomach)
+     return push(this.stomach) 
     }
-    
+    poop(){
+      return this.stomach = []
+    }
+    toString(){
+      return `${this.name} , ${this.age}`
+    }
   }
   
   /*
